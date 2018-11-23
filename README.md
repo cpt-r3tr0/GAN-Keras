@@ -8,6 +8,11 @@ Collection of Keras implementations of Generative Adversarial Networks (GANs) su
     + [Adversarial Autoencoder](#adversarial-autoencoder)
     + [Bidirectional GAN](#bigan)
     + [Boundary-Seeking GAN](#bgan)
+    + [Conditional GAN](#cgan)
+    + [Context-Conditional GAN](#cc-gan)
+    + [Context Encoder](#context-encoder)
+    + [Coupled GANs](#cogan)
+    + [CycleGAN](#cyclegan)
 
 ## Installation
     $ git clone https://github.com/cpt-r3tr0/GAN-Keras.git
@@ -74,4 +79,91 @@ Paper: https://arxiv.org/abs/1702.08431
 ```
 $ cd implementations/bgan/
 $ python3 bgan.py
+```
+
+
+### CycleGAN
+Implementation of _Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks_.
+
+[Code](cyclegan/cyclegan.py)
+
+Paper: https://arxiv.org/abs/1703.10593
+
+<p align="center">
+    <img src="assets/cyclegan.png" width="640"\>
+</p>
+
+#### Example
+```
+$ cd cyclegan/
+$ bash download_dataset.sh apple2orange
+$ python3 cyclegan.py
+```   
+
+<p align="center">
+    <img src="assets/cyclegan_gif.gif" width="640"\>
+</p>
+
+### CC-GAN
+Implementation of _Semi-Supervised Learning with Context-Conditional Generative Adversarial Networks_.
+
+[Code](ccgan/ccgan.py)
+
+Paper: https://arxiv.org/abs/1611.06430
+
+#### Example
+```
+$ cd ccgan/
+$ python3 ccgan.py
+```
+
+<p align="center">
+    <img src="assets/ccgan.png" width="640"\>
+</p>
+
+### CGAN
+Implementation of _Conditional Generative Adversarial Nets_.
+
+[Code](cgan/cgan.py)
+
+Paper:https://arxiv.org/abs/1411.1784
+
+#### Example
+```
+$ cd cgan/
+$ python3 cgan.py
+```
+
+<p align="center">
+    <img src="assets/cgan.gif" width="640"\>
+</p>
+
+### Context Encoder
+Implementation of _Context Encoders: Feature Learning by Inpainting_.
+
+[Code](context_encoder/context_encoder.py)
+
+Paper: https://arxiv.org/abs/1604.07379
+
+#### Example
+```
+$ cd context_encoder/
+$ python3 context_encoder.py
+```
+
+<p align="center">
+    <img src="assets/context_encoder.png" width="640"\>
+</p>
+
+### CoGAN
+Implementation of _Coupled generative adversarial networks_.
+
+[Code](cogan/cogan.py)
+
+Paper: https://arxiv.org/abs/1606.07536
+
+#### Example
+```
+$ cd cogan/
+$ python3 cogan.py
 ```

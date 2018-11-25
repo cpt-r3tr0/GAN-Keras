@@ -18,6 +18,13 @@ Collection of Keras implementations of Generative Adversarial Networks (GANs) su
     + [DualGAN](#dualgan)
     + [Generative Adversarial Network](#gan)
     + [InfoGAN](#infogan)
+    + [LSGAN](#lsgan)
+    + [Pix2Pix](#pix2pix)
+    + [PixelDA](#pixelda)
+    + [Semi-Supervised GAN](#sgan)
+    + [Super-Resolution GAN](#srgan)
+    + [Wasserstein GAN](#wgan)
+    + [Wasserstein GAN GP](#wgan-gp)  
 
 ## Installation
     $ git clone https://github.com/cpt-r3tr0/GAN-Keras.git
@@ -259,3 +266,130 @@ $ python3 infogan.py
     <img src="assets/infogan.png" width="640"\>
 </p>
 
+### LSGAN
+Implementation of _Least Squares Generative Adversarial Networks_.
+
+[Code](implementations/lsgan/lsgan.py)
+
+Paper: https://arxiv.org/abs/1611.04076
+
+#### Example
+```
+$ cd implementations/lsgan/
+$ python3 lsgan.py
+```
+### Pix2Pix
+Implementation of _Image-to-Image Translation with Conditional Adversarial Networks_.
+
+[Code](implementations/pix2pix/pix2pix.py)
+
+Paper: https://arxiv.org/abs/1611.07004
+
+<p align="center">
+    <img src="assets/pix2pix_architecture.png" width="640"\>
+</p>
+
+#### Example
+```
+$ cd implementations/pix2pix/
+$ bash download_dataset.sh facades
+$ python3 pix2pix.py
+```   
+
+<p align="center">
+    <img src="assets/pix2pix2.png" width="640"\>
+</p>
+
+### PixelDA
+Implementation of _Unsupervised Pixel-Level Domain Adaptation with Generative Adversarial Networks_.
+
+[Code](implementations/pixelda/pixelda.py)
+
+Paper: https://arxiv.org/abs/1612.05424
+
+#### MNIST to MNIST-M Classification
+Trains a classifier on MNIST images that are translated to resemble MNIST-M (by performing unsupervised image-to-image domain adaptation). This model is compared to the naive solution of training a classifier on MNIST and evaluating it on MNIST-M. The naive model manages a 55% classification accuracy on MNIST-M while the one trained during domain adaptation gets a 95% classification accuracy.
+
+```
+$ cd implementations/pixelda/
+$ python3 pixelda.py
+```
+
+| Method       | Accuracy  |
+| ------------ |:---------:|
+| Naive        | 55%       |
+| PixelDA      | 95%       |
+
+### SGAN
+Implementation of _Semi-Supervised Generative Adversarial Network_.
+
+[Code](implementations/sgan/sgan.py)
+
+Paper: https://arxiv.org/abs/1606.01583
+
+#### Example
+```
+$ cd implementations/sgan/
+$ python3 sgan.py
+```
+
+<p align="center">
+    <img src="assets/sgan.png" width="640"\>
+</p>
+
+### SRGAN
+Implementation of _Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network_.
+
+[Code](implementations/srgan/srgan.py)
+
+Paper: https://arxiv.org/abs/1609.04802
+
+<p align="center">
+    <img src="assets/superresgan.png" width="640"\>
+</p>
+
+
+#### Example
+```
+$ cd implementations/srgan/
+<follow steps at the top of srgan.py>
+$ python3 srgan.py
+```
+
+<p align="center">
+    <img src="assets/srgan.png" width="640"\>
+</p>
+
+### WGAN
+Implementation of _Wasserstein GAN_ (with DCGAN generator and discriminator).
+
+[Code](implementations/wgan/wgan.py)
+
+Paper: https://arxiv.org/abs/1701.07875
+
+#### Example
+```
+$ cd implementations/wgan/
+$ python3 wgan.py
+```
+
+<p align="center">
+    <img src="assets/wgan2.png" width="640"\>
+</p>
+
+### WGAN GP
+Implementation of _Improved Training of Wasserstein GANs_.
+
+[Code](implementations/wgan_gp/wgan_gp.py)
+
+Paper: https://arxiv.org/abs/1704.00028
+
+#### Example
+```
+$ cd implementations/wgan_gp/
+$ python3 wgan_gp.py
+```
+
+<p align="center">
+    <img src="assets/imp_wgan.gif" width="640"\>
+</p>
